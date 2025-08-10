@@ -33,4 +33,20 @@ public class SemesterController
     {
        return semeservice.getdatafromSemester();
     }
+
+    @GetMapping("/GetDataFromID/{semesterid}")
+    public Semester getDataFromID(@PathVariable(value = "semesterid") String semesterid)
+    {
+        return semeservice.getfromfromid(semesterid);
+
+    }
+
+    @PutMapping("/updateData")
+    public SemesterDto updateData(@RequestBody SemesterDto semeDto)
+    {
+        semeservice.updateData(semeDto);
+                return semeDto;
+    }
+
+
 }

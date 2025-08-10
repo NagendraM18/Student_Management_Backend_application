@@ -11,9 +11,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Student
 {
-    @Id
+
     private long slno;
     private String  studentName;
+    @Id
     private String  studentRego;
     private String email;
     @ManyToOne

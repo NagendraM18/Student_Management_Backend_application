@@ -5,6 +5,9 @@ import com.example.Student_Management.Entitys.Department;
 import com.example.Student_Management.Entitys.Semester;
 import com.example.Student_Management.Repository.DepartmentRepository;
 import com.example.Student_Management.Repository.SemesterRepository;
+import com.example.Student_Management.customException.DepartmentNotFound;
+import com.example.Student_Management.customException.SemesterNOtFoundAddSemesterFirst;
+import com.example.Student_Management.customException.SemesterNotFound;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Service;
@@ -45,5 +48,26 @@ public class SemesterService
     public List<Semester> getdatafromSemester()
     {
         return semeRepo.findAll();
+    }
+
+    public Semester getfromfromid(String id) {
+        return semeRepo.findById(id)
+                .orElseThrow(()->new SemesterNotFound("semester not present"));
+    }
+
+    public void updateData(SemesterDto semeDto)
+    {
+        Semester semeobject=model.map(semeDto, Semester.class);
+        Semester semesterobject=semeRepo.findById(semeobject.getSemesterid())
+                .orElseThrow(()->new SemesterNOtFoundAddSemesterFirst("SemesterNOtFoundAddSemesterFirst"));
+        Optional<Department> deptobject1=deptrepoobject.findById(semeDto.getDepartmentname());
+        if(semesterobject.getDepartmnetobject().getDepartmentName().equals(semeDto.getDepartmentname()))
+        {
+            semeobject.setDepartmnetobject(deptobject1.get());
+            semeRepo.save(semeobject);
+        }
+        else {
+            throw new DepartmentNotFound("departent Not Found");
+        }
     }
 }
