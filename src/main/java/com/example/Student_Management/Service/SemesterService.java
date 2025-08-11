@@ -9,6 +9,7 @@ import com.example.Student_Management.customException.DepartmentNotFound;
 import com.example.Student_Management.customException.SemesterNOtFoundAddSemesterFirst;
 import com.example.Student_Management.customException.SemesterNotFound;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,7 @@ public class SemesterService
    private ModelMapper model;
    private DepartmentRepository deptrepoobject;
 
+   @Autowired
    public SemesterService(SemesterRepository semeRepo,ModelMapper model,DepartmentRepository deptrepoobject)
    {
        this.semeRepo=semeRepo;

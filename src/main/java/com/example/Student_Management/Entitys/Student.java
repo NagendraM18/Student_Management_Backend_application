@@ -15,6 +15,7 @@ public class Student
     private long slno;
     private String  studentName;
     @Id
+    @Column(name ="student_rego")
     private String  studentRego;
     private String email;
     @ManyToOne

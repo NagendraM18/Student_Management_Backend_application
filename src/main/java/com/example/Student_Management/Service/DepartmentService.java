@@ -9,13 +9,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 
 @Service
-public class DepartmentService
-{
+public class DepartmentService {
     private DepartmentRepository deptrepo;
+
     @Autowired
-    public DepartmentService(DepartmentRepository deptrepo)
-    {
-        this.deptrepo=deptrepo;
+    public DepartmentService(DepartmentRepository deptrepo) {
+        this.deptrepo = deptrepo;
     }
 
     public void addDataToDepartment( Department dept)

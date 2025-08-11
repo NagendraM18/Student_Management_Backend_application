@@ -37,4 +37,23 @@ public class SubjectController
         return subjectservice.getdata();
 
     }
+    @GetMapping("/Getsubjectbyid/{subjectid}")
+    public Subject getsingleData(@PathVariable(value = "subjectid") String id)
+    {
+        return subjectservice.getsingledata(id);
+    }
+
+    @PutMapping("/updatesubject")
+    public String update(@RequestBody SubjectDto subjectDtoObject)
+    {
+        subjectservice.upatedata(subjectDtoObject);
+        return "updated";
+    }
+
+    @DeleteMapping("/deletThesubject/{subjectid}")
+    public String deletethedata(@PathVariable(value ="subjectid") String id)
+    {
+        subjectservice.deletDataBasedOnSubjectId(id);
+        return "deleted";
+    }
 }
