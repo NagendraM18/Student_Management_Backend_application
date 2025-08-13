@@ -12,10 +12,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 @Data
 public class Subject
 {
+    @Column(name = "slno")
     private  long slno;
     @Id
-    private String subjectid;
-    private String subject;
+    @Column(name = "subjectId")
+    private String subjectId;
+    @Column(name = "subjectName")
+    private String subjectName;
    @ManyToOne
    @JoinColumn(name = "semesterId")
     private Semester semester;

@@ -1,9 +1,6 @@
 package com.example.Student_Management.Entitys;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,9 +13,12 @@ public class Department
 {
 
 
+    @Column(name = "slno")
     private long slno;
+    @Column(name = "departmentId")
     private String departmentId;
     @Id
+    @Column(name="departmentName")
     private String departmentName;
 
 

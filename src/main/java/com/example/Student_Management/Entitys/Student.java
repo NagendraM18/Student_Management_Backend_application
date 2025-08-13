@@ -12,13 +12,15 @@ import lombok.NoArgsConstructor;
 public class Student
 {
 
+    @Column(name = "slno")
     private long slno;
+    @Column(name = "studentName")
     private String  studentName;
     @Id
-    @Column(name ="student_rego")
-    private String  studentRego;
+    @Column(name ="studentId")
+    private String  studentId;
     private String email;
     @ManyToOne
-    @JoinColumn(name="semesterid")
+    @JoinColumn(name="semesterId")
     private Semester semester;
 }

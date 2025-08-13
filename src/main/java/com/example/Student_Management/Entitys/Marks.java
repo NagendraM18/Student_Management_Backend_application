@@ -1,9 +1,6 @@
 package com.example.Student_Management.Entitys;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,14 +12,16 @@ import lombok.NoArgsConstructor;
 public class Marks
 {
     @Id
-    private String marksid;
+    @Column(name = "marksId")
+    private String marksId;
     @ManyToOne
-    @JoinColumn(name = "student_rego")
+    @JoinColumn(name = "studentId")
     private Student student;
     @ManyToOne
-    @JoinColumn(name = "subjectid")
+    @JoinColumn(name = "subjectId")
     private Subject subject;
 
+    @Column(name = "marks")
     private Double marks;
 
 }

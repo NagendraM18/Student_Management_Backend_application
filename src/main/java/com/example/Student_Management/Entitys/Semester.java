@@ -15,12 +15,15 @@ public class Semester
 {
 
 
+     @Column(name = "slno")
      private long slno;
      @Id
-      private String semesterid;
-     private  String semester;
+     @Column(name = "semesterId")
+      private String semesterId;
+     @Column(name = "semesterName")
+     private  String semesterName;
      @ManyToOne
-     @JoinColumn(name = "department_id")
+     @JoinColumn(name = "departmentId")
      private Department departmnetobject;
 
 
