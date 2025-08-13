@@ -14,13 +14,13 @@ public class Student
 
     @Column(name = "slno")
     private long slno;
-    @Column(name = "studentName")
+    @Column(name = "studentname")
     private String  studentName;
     @Id
-    @Column(name ="studentId")
+    @Column(name ="studentid")
     private String  studentId;
     private String email;
     @ManyToOne
-    @JoinColumn(name="semesterId")
+    @JoinColumn(name="semesterid")
     private Semester semester;
 }

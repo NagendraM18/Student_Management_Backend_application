@@ -12,13 +12,13 @@ import lombok.NoArgsConstructor;
 public class Marks
 {
     @Id
-    @Column(name = "marksId")
+    @Column(name = "marksid")
     private String marksId;
     @ManyToOne
-    @JoinColumn(name = "studentId")
+    @JoinColumn(name = "studentid")
     private Student student;
     @ManyToOne
-    @JoinColumn(name = "subjectId")
+    @JoinColumn(name = "subject")
     private Subject subject;
 
     @Column(name = "marks")

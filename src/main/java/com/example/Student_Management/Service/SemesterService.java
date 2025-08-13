@@ -35,15 +35,15 @@ public class SemesterService
 
     public void addDataToSemester(Semester seme)
     {
-        Department object=seme.getDepartmnetobject();
+        Department object=seme.getDepartmentObject();
         Optional<Department> deptobject=deptrepoobject.findById(object.getDepartmentName());
         if(deptobject.isPresent())
         {
-            seme.setDepartmnetobject(deptobject.get());
+            seme.setDepartmentObject(deptobject.get());
         }
         else{
            deptrepoobject.save(object);
-           seme.setDepartmnetobject(object);
+           seme.setDepartmentObject(object);
 
         }
         semeRepo.save(seme);
@@ -62,12 +62,12 @@ public class SemesterService
     public void updateData(SemesterDto semeDto)
     {
         Semester semeobject=model.map(semeDto, Semester.class);
-        Semester semesterobject=semeRepo.findById(semeobject.getSemesterid())
+        Semester semesterobject=semeRepo.findById(semeobject.getSemesterId())
                 .orElseThrow(()->new SemesterNOtFoundAddSemesterFirst("SemesterNOtFoundAddSemesterFirst"));
         Optional<Department> deptobject1=deptrepoobject.findById(semeDto.getDepartmentname());
-        if(semesterobject.getDepartmnetobject().getDepartmentName().equals(semeDto.getDepartmentname()))
+        if(semesterobject.getDepartmentObject().getDepartmentName().equals(semeDto.getDepartmentname()))
         {
-            semeobject.setDepartmnetobject(deptobject1.get());
+            semeobject.setDepartmentObject(deptobject1.get());
             semeRepo.save(semeobject);
         }
         else {

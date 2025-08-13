@@ -7,19 +7,19 @@ import lombok.NoArgsConstructor;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 public class Subject
 {
     @Column(name = "slno")
     private  long slno;
     @Id
-    @Column(name = "subjectId")
+    @Column(name = "subjectid")
     private String subjectId;
-    @Column(name = "subjectName")
+    @Column(name = "subjectname")
     private String subjectName;
    @ManyToOne
-   @JoinColumn(name = "semesterId")
+   @JoinColumn(name = "semesterid")
     private Semester semester;
 }

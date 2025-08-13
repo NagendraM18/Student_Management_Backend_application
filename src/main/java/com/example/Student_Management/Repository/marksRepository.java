@@ -12,5 +12,5 @@ public interface marksRepository extends JpaRepository<Marks,String>
 {
 
 
-    List<Marks> findByStudentStudentRego(String id);
+    List<Marks> findByStudentStudentId(String id);
 }

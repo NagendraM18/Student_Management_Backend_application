@@ -53,7 +53,7 @@ public class MarksService
 
     public SPGA_And_Result getlist(String id)
     {
-       List<Marks> mark=marksrepo.findByStudentStudentRego(id);
+       List<Marks> mark=marksrepo.findByStudentStudentId(id);
        List<MarksOutputDto> output=mark.stream()
                .map(marks->model.map(marks, MarksOutputDto.class))
                .collect(Collectors.toList());

@@ -17,6 +17,6 @@ public class SemesterDto
 {
     private long slno;
     private String semesterid;
-    private  String semester;
+    private  String semestername;
     private String departmentname;
 }
