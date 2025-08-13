@@ -15,6 +15,8 @@ public class SemesterController
 {
 
     private SemesterService semeservice;
+
+    SemesterController(){ }
     @Autowired
     public SemesterController(SemesterService semeservice)
     {

@@ -23,6 +23,8 @@ public class StudentService
     private StudentRepository stdRepo;
     private SemesterRepository semeRepo;
     private ModelMapper model;
+
+    StudentService(){}
     @Autowired
     public StudentService(StudentRepository stdRepo, SemesterRepository semeRepo,ModelMapper model)
     {

@@ -16,7 +16,7 @@ public class SubjectController
 
     private SubjectService subjectservice;
 
-
+  SubjectController(){ }
     @Autowired
     public SubjectController(SubjectService subjectservice)
     {

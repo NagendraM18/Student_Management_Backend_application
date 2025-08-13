@@ -12,6 +12,7 @@ import java.util.List;
 public class DepartmentService {
     private DepartmentRepository deptrepo;
 
+    DepartmentService(){}
     @Autowired
     public DepartmentService(DepartmentRepository deptrepo) {
         this.deptrepo = deptrepo;

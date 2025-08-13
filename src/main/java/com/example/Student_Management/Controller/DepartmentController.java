@@ -12,6 +12,8 @@ import java.util.List;
 public class DepartmentController
 {
     private DepartmentService deptservice;
+
+    DepartmentController(){}
     @Autowired
    public DepartmentController(DepartmentService deptservice)
    {

@@ -21,6 +21,7 @@ public class SubjectService
     private SubjectRepository subjectRepo;
     private SemesterRepository semeRepo;
     private ModelMapper model;
+    SubjectService(){}
     @Autowired
     public SubjectService(SubjectRepository subjectRepo,SemesterRepository semeRepo,ModelMapper model)
     {

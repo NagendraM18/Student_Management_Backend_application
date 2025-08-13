@@ -16,6 +16,7 @@ public class StudentController
 {
 
   private StudentService stdservice;
+  StudentController(){}
   @Autowired
     public StudentController(StudentService stdservice)
     {

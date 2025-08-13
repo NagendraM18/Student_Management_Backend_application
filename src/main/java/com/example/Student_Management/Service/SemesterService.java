@@ -23,6 +23,8 @@ public class SemesterService
    private ModelMapper model;
    private DepartmentRepository deptrepoobject;
 
+   SemesterService(){}
+
    @Autowired
    public SemesterService(SemesterRepository semeRepo,ModelMapper model,DepartmentRepository deptrepoobject)
    {
