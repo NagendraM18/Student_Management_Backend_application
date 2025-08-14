@@ -15,10 +15,10 @@ public class Department
 
     @Column(name = "slno")
     private long slno;
-    @Column(name = "departmentId")
+    @Column(name = "departmentid")
     private String departmentId;
     @Id
-    @Column(name="departmentName")
+    @Column(name="departmentname")
     private String departmentName;
 
 
